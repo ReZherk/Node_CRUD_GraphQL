@@ -1,0 +1,44 @@
+{
+  "name": "node_crud_graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReZherk/Node_CRUD_GraphQL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ReZherk/Node_CRUD_GraphQL/issues"
+  },
+  "homepage": "https://github.com/ReZherk/Node_CRUD_GraphQL#readme",
+
+  "dependencyNotes": {
+    "dotenv": "Carga variables de entorno",
+    "express": "Servidor HTTP",
+    "express-graphql": "Middleware para usar GraphQL en Express",
+    "graphql": "Librería base de GraphQL",
+    "mysql2": "Driver MySQL",
+    "sequelize": "ORM para SQL" 
+  },
+
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.10.1",
+    "mysql2": "^3.16.0",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
