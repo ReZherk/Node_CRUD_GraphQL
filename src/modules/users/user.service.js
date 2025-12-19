@@ -1,4 +1,3 @@
-const { use, useReducer } = require("react");
 const User = require("./user.model");
 
 class UserService {
@@ -23,8 +22,9 @@ class UserService {
       if (error.name === "SequelizeUniqueConstraintError") {
         throw new Error("El email  ya esta registrado");
       }
+
+      throw error;
     }
-    throw error;
   }
 
   async updateUser(id, userData) {

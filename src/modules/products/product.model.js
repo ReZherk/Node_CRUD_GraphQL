@@ -1,8 +1,8 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require("../../config/database");
 
-const User = sequelize.define(
-  "User",
+const product = sequelize.define(
+  "Product",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -10,39 +10,50 @@ const User = sequelize.define(
       autoIncrement: true,
     },
     name: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
-    },
-
-    email: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(120),
       allowNull: false,
       unique: true,
       validate: {
-        isEmail: true,
         notEmpty: true,
       },
     },
-    age: {
+    description: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+    },
+
+    price: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 0,
       validate: {
         min: 0,
-        max: 150,
       },
     },
-    active: {
+    stock: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+      validate: {
+        min: 0,
+      },
+    },
+    category: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    available: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
     },
   },
   {
-    tableName: "users",
+    tableName: "Products",
     timestamps: true,
   }
 );
 
-module.exports = User;
+module.exports = product;
